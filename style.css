@@ -1,0 +1,75 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: content-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.hero_image{
+    margin: 0;
+}
+
+.hero_image img{
+    width: 300px;
+    /* contain=no cubre todo el contenedor
+        cover=abarca todo el contenedor de la imagen */
+    object-fit: contain;
+}
+
+.dishes{
+    display: grid;
+    /* Auto fit hace que no hayan espacios sin usar.
+        Autofit, ensancha las columnas par autilizar todo el espacio posible.
+
+        Repeat: Representa un fragmento repetido, dependiente de la cantidad de elementos.
+
+        minmax: Declaramos el tamaño mínimo y máximo
+    */
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    grid-template-rows: repeat(2,minmax(150px,1fr));
+}
+
+.dishes-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dish-video{
+    grid-area:1/1/3/3;
+    /* Fila donde comienza/columna donde comienza/fila donde acaba/columna donde acaba */
+}
+
+.plates{
+    display: grid;
+    row-gap: 15px;
+    column-gap: 15px;
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+}
+
+.plate-image{
+    background-color: blue;
+    padding: 20px;
+    border-bottom-left-radius: 30px;
+    transition-duration: 1000ms;
+}
+
+.plate-image:hover{
+    background-color: red;
+}
+
+.plate-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
